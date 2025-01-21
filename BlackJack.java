@@ -1,8 +1,14 @@
+// 
+//1/21/25
+//assigment to update blackjack
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class BlackJack {
 
+    //constants - cannot change their values 
+    //static - I can use these in every function without having to pass them in 
     private static final String[] SUITS = { "Hearts", "Diamonds", "Clubs", "Spades" };
     private static final String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King",
             "Ace" };
@@ -20,7 +26,7 @@ public class BlackJack {
 
         playerTotal = playerTurn(scanner, playerTotal);
         if (playerTotal > 21) {
-            System.out.println("You busted! Dealer wins.");
+            System.out.println("You busted! Dealer wins."); 
             return;
         }
 
@@ -40,6 +46,7 @@ public class BlackJack {
         Random random = new Random();
         for (int i = 0; i < DECK.length; i++) {
             int index = random.nextInt(DECK.length);
+            // swapping two integers in an array
             int temp = DECK[i];
             DECK[i] = DECK[index];
             DECK[index] = temp;
